@@ -15,8 +15,9 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
-require "lazy_setup"
-require "polish"
+-- Plugins disabled
+-- require "lazy_setup"
+-- require "polish"
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -25,10 +26,11 @@ vim.wo.wrap = true
 vim.wo.linebreak = true
 vim.opt.termguicolors = true
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    -- try_lint without arguments runs the linters defined in `linters_by_ft`
-    -- for the current filetype
-    require("lint").try_lint()
-  end,
-})
+-- Disabled lint autocmd (requires plugin)
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+--   callback = function()
+--     -- try_lint without arguments runs the linters defined in `linters_by_ft`
+--     -- for the current filetype
+--     require("lint").try_lint()
+--   end,
+-- })
